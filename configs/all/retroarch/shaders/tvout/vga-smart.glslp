@@ -1,0 +1,16 @@
+shaders = 2
+shader0 = shaders/tvout-tweaks_smart.glsl
+wrap_mode0 = clamp_to_border
+scale_type_x0 = viewport
+scale_type_y0 = source
+scale_y0 = 1.0
+shader1 = shaders/smart-scanlines.glsl
+wrap_mode1 = clamp_to_border
+scale_type_x1 = viewport
+scale_type_y1 = source
+scale_y1 = 2.0
+parameters = "amp;lines_black;autoscale;detecthires"
+amp = "1.000000"
+lines_black = "0.250000"
+autoscale = "1.000000"
+detecthires = "1.000000"

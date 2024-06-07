@@ -1,0 +1,5 @@
+shaders = 1
+shader0 = shaders/tvout-tweaks_smart.glsl
+wrap_mode0 = clamp_to_border
+parameters = "TVOUT_AUTO"
+TVOUT_AUTO = "2.000000"

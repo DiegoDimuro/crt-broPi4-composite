@@ -1,0 +1,14 @@
+shaders = 2
+shader0 = shaders/imgborder.glsl
+filter_linear0 = true
+scale_type0 = absolute
+scale_x0 = 720
+scale_y0 = 640
+shader1 = shaders/tvout-tweaks_smart.glsl
+wrap_mode1 = clamp_to_border
+parameters = box_scale;in_res_x;in_res_y
+box_scale = 2.0
+in_res_x = 180.0
+in_res_y = 102.0
+textures = BORDER
+BORDER = /opt/retropie/configs/atarilynx/overlay.png

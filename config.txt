@@ -22,11 +22,9 @@
 #framebuffer_height=720
 
 # uncomment if hdmi display is not detected and composite is being output
-hdmi_force_hotplug=1
-
-# uncomment to force a specific HDMI mode (this will force VGA)
-hdmi_group=2
-hdmi_mode=4
+hdmi_group=1 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+hdmi_mode=2 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+hdmi_ignore_hotplug=1 #Optional. Forces composite tv-out even if HDMI is connected.
 
 # uncomment to force a HDMI mode rather than DVI. This can make audio work in
 # DMT (computer monitor) modes
@@ -57,20 +55,16 @@ dtparam=i2c_arm=on
 dtparam=audio=on
 
 [pi4]
-# Enable DRM VC4 V3D driver on top of the dispmanx display stack
-dtoverlay=vc4-fkms-v3d
-max_framebuffers=2
-
 # TV Output
-framebuffer_width=580
-framebuffer_height=360
+framebuffer_width=720
+framebuffer_height=448
 enable_tvout=1
-sdtv_mode=0
-sdtv_aspect=1
-disable_overscan=1
+sdtv_mode=0 #Enables NTSC 480i mode. EmulationStation will switch to 240p mode when Retroarch launches.
+sdtv_aspect=1 #4:3 aspect ratio.
+disable_overscan=1 #We'll handle overscan on a per-system basis with Retroarch.disable_overscan=1
 
 # Audio
-audio_pwm_mode=2
+audio_pwm_mode=2 #Optional but recommended. Enables an alternative audio driver that works great with the analog audio out.
 
 [all]
 dtoverlay=vc4-fkms-v3d

@@ -33,8 +33,3 @@
 
 ## Step 4: Install custom theme
 - Copy the folder ./es-bropi to/etc/emulationstation/themes
-
-## Step 5: General locations
-- Games media in /opt/retropie/configs/all/emulationstation/downloaded_media
-![Example of arcade subfolder contents](images/media.png)
-- Gamelists in /opt/retropie/configs/all/emulationstation/gamelists

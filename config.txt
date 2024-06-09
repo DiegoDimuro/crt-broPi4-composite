@@ -22,9 +22,8 @@
 #framebuffer_height=720
 
 # uncomment if hdmi display is not detected and composite is being output
-hdmi_group=1 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
-hdmi_mode=2 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
-hdmi_ignore_hotplug=1 #Optional. Forces composite tv-out even if HDMI is connected.
+
+# uncomment to force a specific HDMI mode (this will force VGA)
 
 # uncomment to force a HDMI mode rather than DVI. This can make audio work in
 # DMT (computer monitor) modes
@@ -40,21 +39,23 @@ hdmi_ignore_hotplug=1 #Optional. Forces composite tv-out even if HDMI is connect
 #uncomment to overclock the arm. 700 MHz is the default.
 #arm_freq=800
 
+# Uncomment some or all 
+# uncomment if hdmi display is not detected and composite is being output
+hdmi_group=1 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+hdmi_mode=2 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+hdmi_ignore_hotplug=1 #Optional. Forces composite tv-out even if HDMI is connected.
+
 # Uncomment some or all of these to enable the optional hardware interfaces
 dtparam=i2c_arm=on
-#dtparam=i2s=on
-#dtparam=spi=on
-
-# Uncomment this to enable infrared communication.
-#dtoverlay=gpio-ir,gpio_pin=17
-#dtoverlay=gpio-ir-tx,gpio_pin=18
-
-# Additional overlays and parameters are documented /boot/overlays/README
 
 # Enable audio (loads snd_bcm2835)
 dtparam=audio=on
 
 [pi4]
+# Enable DRM VC4 V3D driver on top of the dispmanx display stack
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+
 # TV Output
 framebuffer_width=720
 framebuffer_height=448
@@ -68,5 +69,4 @@ audio_pwm_mode=2 #Optional but recommended. Enables an alternative audio driver 
 
 [all]
 dtoverlay=vc4-fkms-v3d
-overscan_scale=1
-enable_uart=1
+

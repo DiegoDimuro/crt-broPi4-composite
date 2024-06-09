@@ -6,9 +6,9 @@ directory="$(dirname "$0")"
 # Array of search and replace pairs
 search_replace_pairs=(
   'custom_viewport_width = "364" custom_viewport_width = "395"'
-  'custom_viewport_height = "432" custom_viewport_height = "463"'
+  'custom_viewport_height = "463" custom_viewport_height = "453"'
   'custom_viewport_x = "180" custom_viewport_x = "168"'
-  'custom_viewport_y = "30" custom_viewport_y = "10"'
+  'custom_viewport_y = "10" custom_viewport_y = "14"'
 )
 
 # Function to replace lines in a file

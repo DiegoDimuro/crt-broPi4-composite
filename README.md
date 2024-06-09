@@ -33,3 +33,16 @@
 
 ## Step 4: Install custom theme
 - Copy the folder ./es-bropi to/etc/emulationstation/themes
+
+## Step 5: OPTIONAL: xpadneo install (xbox controllers BT)
+- SSH into raspberry
+- sudo apt-get install raspberrypi-kernel-headers
+- git clone https://github.com/atar-axis/xpadneo.git 
+- cd xpadneo
+- sudo ./install.sh
+- sudo bluetoothctl << this command will display a submenu that you can manage your bluetooth
+- scan on << now turn on controller and put in pairing mode (see the MAC of the controller) wait until you see a MAC address followed by "Microsoft Wireless Controller"
+- scan off
+- pair [use MAC ID - 6 pair of hexidecimal numbers separated by colons] << lot of information scrolls by, wait for "Pairing Successful" Controller will rumble a haptic pattern twice when successful.
+- trust [MAC ID] 
+- quit

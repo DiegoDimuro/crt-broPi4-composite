@@ -1,0 +1,9 @@
+if [ -f "/opt/retropie/configs/$1/480i.txt" ]; then interlaced=$(tr -d "\r" < "/opt/retropie/configs/$1/480i.txt" | sed -e 's/\[/\\\[/'); fi > /dev/null
+if [ -f "/opt/retropie/configs/ports/$1/480i.txt" ]; then interlaced=$(tr -d "\r" < "/opt/retropie/configs/ports/$1/480i.txt" | sed -e 's/\[/\\\[/'); fi > /dev/null
+if [ ! -s "/opt/retropie/configs/$1/480i.txt" ] && [ ! -s "/opt/retropie/configs/ports/$1/480i.txt" ] || [ -z "$interlaced" ]; then interlaced="empty"; fi > /dev/null
+if [ -f "/opt/retropie/configs/$1/240p.txt" ]; then progresive=$(tr -d "\r" < "/opt/retropie/configs/$1/240p.txt" | sed -e 's/\[/\\\[/'); fi > /dev/null
+if [ -f "/opt/retropie/configs/ports/$1/240p.txt" ]; then progresive=$(tr -d "\r" < "/opt/retropie/configs/ports/$1/240p.txt" | sed -e 's/\[/\\\[/'); fi > /dev/null
+if [ ! -s "/opt/retropie/configs/$1/240p.txt" ] && [ ! -s "/opt/retropie/configs/ports/$1/240p.txt" ] || [ -z "$progresive" ]; then progresive="empty"; fi > /dev/null
+if tvservice -s | grep NTSC && { ! echo "$3" | grep -wi "$interlaced" || echo "$interlaced" | grep empty; } && ! echo "$interlaced" | grep -xi "all" && { echo "$3" | grep -wi "$progresive" || echo "$progresive" | grep empty; }; then echo 'NTSC 4:3 P' > /tmp/svmode; else echo 'NTSC 4:3' > /tmp/svmode; fi > /dev/null
+if [[ $1 == "megadrive" || $1 == "sega32x" || $1 == "segacd" ]] && [ $2 != "lr-genesis-plus-gx" ] && { ! cmp --silent "/opt/retropie/configs/$1/retroarch.cfg" "/opt/retropie/configs/$1/retroarch_pico.cfg"; }; then cp "/opt/retropie/configs/$1/retroarch_pico.cfg" "/opt/retropie/configs/$1/retroarch.cfg"; elif [[ $1 == "megadrive" || $1 == "sega32x" || $1 == "segacd" ]] && [ $2 == "lr-genesis-plus-gx" ] && { ! cmp --silent "/opt/retropie/configs/$1/retroarch.cfg" "/opt/retropie/configs/$1/retroarch_crt.cfg"; }; then cp "/opt/retropie/configs/$1/retroarch_crt.cfg" "/opt/retropie/configs/$1/retroarch.cfg"; fi > /dev/null
+bash /opt/retropie/configs/all/change_vmode.sh &

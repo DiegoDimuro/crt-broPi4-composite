@@ -81,7 +81,7 @@ author:			ruckage
 	
 		<textlist name="gamelist">
 			<horizontalMargin>0.0166666666666667</horizontalMargin>		
-			<selectorImagePath>./../art/selector_bar${wide}.png</selectorImagePath>			
+			<selectorImagePath>./../art/selector_bar_widest.png</selectorImagePath>			
 		</textlist>
 	
 		<image name="gamelist_background" extra="true">

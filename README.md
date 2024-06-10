@@ -33,6 +33,9 @@
 
 ## Step 4: Install custom theme
 - Copy the folder ./es-bropi to/etc/emulationstation/themes
+It's the same theme made by [ruckage](https://github.com/ruckage/es-theme-snes-mini).
+I just edited setup.xml to change the selector width, fixed the position of the gamelist and centered the text that used to overflow in 480i in ntsc.xml
+<img src="images/es-theme-fix.png.png" alt="Theme Fix 480i" height="300">
 
 ## Step 5: OPTIONAL: xpadneo install (xbox controllers BT)
 - SSH into raspberry

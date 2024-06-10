@@ -1,5 +1,5 @@
-# crt-broPi4-composite
- Setup for rpi4 using composite out 2 crt tv. 
+# broPi4-CRT-composite
+ Setup for rpi4 using composite and CRT TV. 
 
 ## Features
 - 240p output on games/retroarch
@@ -28,10 +28,10 @@ Basic setup (configure SSH if you plan on using it, if not you can insert the SD
 - Select GL Driver
 - Select GL (Fake KMS) OpenGL desktop driver with fake KMS
 
-## Step 3: Setup broPi main scripts
+## Step 3: Setup 240p scripts
 Add the scripts made by [Sakitoshi](https://github.com/Sakitoshi/retropie-crt-tvout)
 I just edited the arcade cfg to properly scale to 4:3 in my TV and made the vertical games use the full height of my CRT.
-The original repo is for rPi3, i added a source folder with the basic modification for rPi4 (before my edits to the cfg). The next steps apply all the modifications including mine. 
+The original repo is for rPi3, I added a source folder with the basic modification for rPi4 (before my edits to the cfg). The next steps apply all the modifications including mine. 
 - Copy the contents of `/configs` to `/opt/retropie/configs` (adds switching to 240p/480i)
 - Copy the contents of `/bios` to `/home/pi/RetroPie/BIOS` (adds gameboy palettes)
 - Copy the contents of `/arcade` to `/opt/retropie/configs/arcade` (rotates vertical games and fixes mk, mk2, mk3 and popeye)
